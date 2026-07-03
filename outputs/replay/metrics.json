@@ -1,0 +1,6 @@
+{
+  "task": "Pick up the kettle on the table with right arm and pour the water into the cup.",
+  "frames": 450,
+  "avg_chunk_time_s": 16.251423650317722,
+  "reward_final": null
+}
