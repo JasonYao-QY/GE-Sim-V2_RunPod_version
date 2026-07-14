@@ -1,0 +1,63 @@
+{
+  "dims": {
+    "arm": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "grip": [
+      7,
+      15
+    ]
+  },
+  "chunk": {
+    "size": 25,
+    "boundary_window": 2
+  },
+  "robust": {
+    "z_cap": 10.0,
+    "eps": 1e-12
+  },
+  "score": {
+    "missing_action_unexplained_factor": 0.5,
+    "weights": {
+      "unexplained_state_jerk": 0.35,
+      "video_jump": 0.25,
+      "state_acc": 0.15,
+      "boundary_state_jerk": 0.15,
+      "state_jerk": 0.1
+    },
+    "thresholds": {
+      "warning": 0.3,
+      "alert": 0.5,
+      "fail": 0.7
+    }
+  },
+  "hard_fail": {
+    "nan_or_inf_state": true,
+    "video_decode_failure": true,
+    "state_jerk_z": 15.0,
+    "video_jump_z": 15.0
+  },
+  "video": {
+    "width": 128,
+    "height": 64
+  },
+  "clips": {
+    "top_k": 10,
+    "back": 5,
+    "forward": 5,
+    "fps": 16
+  }
+}

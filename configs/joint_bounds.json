@@ -1,0 +1,14 @@
+{
+  "joint_step_deg_max": 2.568942145792971,
+  "joint_acc_deg_max": 1.3430251610848785,
+  "fps": 16.0,
+  "percentile": 99.9,
+  "n_frames_step": 1377,
+  "n_frames_acc": 1374,
+  "source_files": [
+    "assets/demo_000/state_joints_0.npy",
+    "assets/demo_001/state_joints_0.npy",
+    "assets/demo_002/state_joints_0.npy"
+  ],
+  "note": "Absolute joint angular velocity/acceleration bounds from GT. deg/frame at the stated fps. Loaded by the evaluators; not inlined."
+}

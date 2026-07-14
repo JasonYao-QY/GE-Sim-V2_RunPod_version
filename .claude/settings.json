@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -)",
+      "Bash(python3 tools/compute_joint_bounds.py --glob 'assets/*/state_joints_0.npy' --percentile 99.9 --fps 16 --out configs/joint_bounds.json)",
+      "Bash(python3 tools/eval_temporospatial_risk.py --state outputs/replay/state.npy --out /tmp/claude-1001/tsr_nobounds)",
+      "Bash(python3 tools/eval_temporospatial_risk.py --state outputs/replay/state.npy --joint-bounds configs/joint_bounds.json --out /tmp/claude-1001/tsr_bounds)",
+      "Bash(python3 -c ' *)",
+      "Read(//tmp/claude-1001/tsr_bounds/**)",
+      "Read(//tmp/claude-1001/tsr_bounds/plots/**)",
+      "Bash(python3 -m pytest tests/test_joint_motion_metrics.py -q)",
+      "Bash(python3 -c \"import sys; print\\(sys.executable\\)\")",
+      "Bash(uv run *)",
+      "Bash(python3 tools/eval_state_continuity.py --state outputs/replay/state.npy --out /tmp/claude-1001/sc_nobounds)",
+      "Bash(python3 tools/eval_state_continuity.py --state outputs/replay/state.npy --joint-bounds configs/joint_bounds.json --out /tmp/claude-1001/sc_bounds)",
+      "Bash(python3 tools/eval_state_continuity.py --state /tmp/claude-1001/gt_demo002_wm16.npy --joint-bounds configs/joint_bounds.json --out /tmp/claude-1001/sc_gt)",
+      "Bash(sed -n '/pass.warn.fail/,/fails by check/p')",
+      "Read(//tmp/claude-1001/sc_bounds/**)",
+      "Read(//tmp/claude-1001/tsr_nobounds/**)",
+      "Bash(python3 tools/eval_temporospatial_risk.py --state outputs/replay/state.npy --video outputs/replay/video.mp4 --joint-bounds configs/joint_bounds.json --out outputs/replay/eval_temporospatial_risk)"
+    ]
+  }
+}

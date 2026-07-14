@@ -1,0 +1,5 @@
+most_alerting_frame=250
+jerk_index=248
+arm_jerk_rms=0.06530646979808807
+arm_jerk_robust_z=11.121299743652344
+near_chunk_boundary=True
